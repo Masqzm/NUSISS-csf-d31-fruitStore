@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<h2>Cart</h2>
+
+
+<div class="component">
+    @for (li of cart.lineItems; track $index) {
+        <div class="card">
+            <img src="/fruits/{{ li.itemInfo.image }}" alt="">
+            <div class="details cart"> 
+                <h3>{{ li.itemInfo.name }}</h3>
+                <p>Qty: {{ li.quantity }}</p>
+                <p>Total cost: {{ li.totalCost | currency }}</p>
+            </div>
+        </div>
+    }
+
+    <h3 id="grandTotal">Grand Total: {{ cart.grandTotal | currency }}</h3>
+</div>

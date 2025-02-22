@@ -1,1 +1,17 @@
-<p>inventory works!</p>
+<h2>Inventory</h2>
+
+<div class="component">
+    @for (item of INVENTORY; track $index) {
+        <div class="card">
+            <img src="/fruits/{{ item.image }}" alt="">
+            <div class="details"> 
+                <h3>{{ item.name }}</h3>
+                {{ item.unitPrice | currency }} 
+                <br>
+                <br>
+                <button type="button" (click)="updateCart(item.key, -1)">-</button>
+                <button type="button" (click)="updateCart(item.key, 1)">+</button>
+            </div>
+        </div>
+    }
+</div>

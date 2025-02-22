@@ -1,0 +1,5 @@
+<h1>Fruit Store</h1>
+<div class="app">
+  <app-inventory [INVENTORY]="FRUIT_STORE" (onCartUpdate)="updateCart($event)"></app-inventory>
+  <app-cart [cart]="cart"></app-cart>
+</div>
